@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess the Number</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <h1> Number Guessing Game </h1>
+    <script>
+        function makeRandomNumber(largestSize) {
+            return Math.floor(Math.random() * largestSize + 1);
+        }
+
+        function playTheGame() {
+            let numberOfGuessesSoFar = 0;
+            let largestSize = prompt("What's the largest number you want this game to go to?");
+            let randomNumber = makeRandomNumber(largestSize);
+            let playerCurrentGuess = -1;
+            while (playerCurrentGuess != randomNumber) {
+                playerCurrentGuess = prompt(`Guess a number from 1 to ${largestSize}`);
+                numberOfGuessesSoFar++;
+                if (playerCurrentGuess < randomNumber) {
+                    document.write(`You guessed ${playerCurrentGuess} but that was TOO LOW.  Try a higher number next time`);
+                } else if (playerCurrentGuess > randomNumber) {
+                    document.write(`You guessed ${playerCurrentGuess} but that was TOO HIGH.  Try a lower number next time`);
+                }
+            }
+            alert(`You win! (And it only took you ${numberOfGuessesSoFar} guesses!)`);
+        }
+
+        playTheGame();
+
+    </script>
+</body>
+</html>
