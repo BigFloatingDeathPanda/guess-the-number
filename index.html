@@ -25,10 +25,11 @@
                     document.write(`You guessed ${playerCurrentGuess} but that was TOO HIGH.  Try a lower number next time`);
                 }
             }
+            document.write(`That's it! You win!`);
             alert(`You win! (And it only took you ${numberOfGuessesSoFar} guesses!)`);
         }
 
-        playTheGame();
+        window.onload = playTheGame();
 
     </script>
 </body>
